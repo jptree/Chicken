@@ -1,8 +1,6 @@
 import re
 from selenium import webdriver
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from selenium.webdriver.support import expected_conditions as EC
+
 
 locations = [
     'https://www.ubereats.com/store/mcdonalds-1069-n-court-st/Y4cUFbTpRIeZGs6s1Ro_8Q?utm_source=mcdonalds&utm_medium=brandpage&utm_campaign=ext-mcdonalds-USCA-storepage',
@@ -10,35 +8,6 @@ locations = [
     'https://www.ubereats.com/store/mcdonalds-main-%26-grant/ADvfv17tTuemPI-2vUskPQ?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkNsZXZlbGFuZCUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpMV3RvNHk3dk1JZ1JRaGhpOTFYTEJPMCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0MS40OTkzMiUyQyUyMmxvbmdpdHVkZSUyMiUzQS04MS42OTQzNjA1JTdE&utm_campaign=ext-mcdonalds-USCA-storepage&utm_medium=brandpage&utm_source=mcdonalds',
     'https://www.ubereats.com/store/mcdonalds-mcmillan-%26-victory/IgtMgli6TsW8qPcD8kLDFg?pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMkNsZXZlbGFuZCUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpMV3RvNHk3dk1JZ1JRaGhpOTFYTEJPMCUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0E0MS40OTkzMiUyQyUyMmxvbmdpdHVkZSUyMiUzQS04MS42OTQzNjA1JTdE&utm_campaign=ext-mcdonalds-USCA-storepage&utm_medium=brandpage&utm_source=mcdonalds'
 ]
-
-# def get_mcdonalds_chicken_prices(urls, driver):
-#     popular_table_path = '//*[@id="main-content"]/div[4]/ul/li[1]/ul'
-#                          # '//*[@id="main-content"]/div[5]/ul/li[1]/ul'
-#     first_time = True
-#     for url in urls:
-#         driver.get(url)
-#         if first_time:
-#             input("Please close popup window and accept cookies... Press a key when finished...")
-#             first_time = False
-#
-#         try:
-#             table = WebDriverWait(driver, 10).until(
-#                 EC.presence_of_element_located((By.XPATH, popular_table_path))
-#             )
-#         except EC.NoSuchElementException:
-#             driver.quit()
-#
-#         # table = driver.find_element_by_xpath(popular_table_path)
-#         items = table.find_elements_by_tag_name('li')
-#         for i in range(len(items)):
-#             price_xpath = f'//*[@id="main-content"]/div[4]/ul/li[1]/ul/li[{i + 1}]/div/div/div/div[1]/div[2]/div[1]'
-#             name_xpath = f'//*[@id="main-content"]/div[4]/ul/li[1]/ul/li[{i + 1}]/div/div/div/div[1]/div[1]/h4/div'
-#             name = driver.find_element_by_xpath(name_xpath).text
-#             price = driver.find_element_by_xpath(price_xpath).text
-#             if 'nug' or 'chic' in name.lower():
-#                 print(f'The {name} contains chicken and costs {price}!')
-
-
 
 
 def get_mcdonalds_chicken_prices_regex(urls, driver):
